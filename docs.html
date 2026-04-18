@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Docs - Megamix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Assets/megamix.png">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header {
+            text-align: center;
+            padding: 60px 0 30px 0;
+        }
+
+        .doc-layout {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        .doc-sidebar {
+            flex: 0 0 250px;
+            background: rgba(31, 40, 51, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            border-radius: 20px;
+            padding: 20px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .doc-sidebar ul {
+            list-style: none;
+        }
+
+        .doc-sidebar ul li {
+            margin-bottom: 12px;
+        }
+
+        .doc-sidebar a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .doc-sidebar a:hover {
+            color: var(--accent);
+        }
+
+        .doc-content-area {
+            flex: 1;
+        }
+
+        .doc-section {
+            background: rgba(31, 40, 51, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            position: relative;
+        }
+
+        .doc-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(135deg, rgba(255,0,127,0.3), transparent, rgba(102,252,241,0.3));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .doc-section h2 {
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding-bottom: 10px;
+        }
+
+        .doc-section h3 {
+            color: #fff;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .doc-section p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .doc-section ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .doc-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .doc-section pre {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(102, 252, 241, 0.3);
+            box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
+            color: var(--accent);
+            overflow-x: auto;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <span class="mega-text">MEGA</span>MIX
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="releases.html">Releases</a></li>
+            <li><a href="docs.html" class="active">Docs</a></li>
+            <li><a href="download.html">Download</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1 class="page-title">Documentation</h1>
+            <p class="subtitle" style="margin: 0 auto;">Official operational procedures and technical references for
+                Nixovena Megamix.</p>
+        </div>
+
+        <div class="doc-layout">
+            <aside class="doc-sidebar">
+                <h3>Contents</h3>
+                <hr style="border: 0; height: 1px; background: rgba(255,255,255,0.1); margin: 10px 0 15px 0;">
+                <ul>
+                    <li><a href="#what-is-megamix">What is Megamix?</a></li>
+                    <li><a href="#editions">Editions</a></li>
+                    <li><a href="#which-edition">Which Edition is for You?</a></li>
+                    <li><a href="#iso-to-usb">ISO to USB</a></li>
+                    <li><a href="#usb-to-boot">USB to Boot</a></li>
+                    <li><a href="#disk-installation">Disk Installation</a></li>
+                    <li><a href="#keyboard-guide">Keyboard Guide</a></li>
+                    <li><a href="#megamix-panel">Megamix-Panel</a></li>
+                    <li><a href="#nvidia-driver">Nvidia Driver Installation</a></li>
+                    <li><a href="#faq">FAQ</a></li>
+                    <li><a href="#technical-details">Technical Details</a></li>
+                </ul>
+            </aside>
+
+            <div class="doc-content-area">
+                <section id="what-is-megamix" class="doc-section">
+                    <h2>What is Megamix?</h2>
+                    <p>Megamix is an overarching operating system infrastructure built by Nixovena Labs. Instead of
+                        forcing users to adapt their workflows to a single rigid environment, Megamix is split into 12
+                        distinct, specialized distributions that share a common, highly-stable core. It is built to
+                        offer the ultimate tailored environment right out of the box, eliminating hours of
+                        post-installation setup.</p>
+                </section>
+
+                <section id="editions" class="doc-section">
+                    <h2>Official Editions Overview</h2>
+                    <p>The Linux Megamix project features a highly diverse ecosystem of specialized "Editions". Rather
+                        than forcing a one-size-fits-all approach, each edition is carefully tailored out-of-the-box
+                        (OOTB) for specific user bases, hardware profiles, and professional scenarios.</p>
+                    <p>Below is a detailed technical breakdown of every official edition available in the repository.
+                    </p>
+
+                    <h3>1. Classic Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> KDE Plasma</li>
+                        <li><strong>Target Audience:</strong> General PC Users, Office Workers, Home Computing.</li>
+                    </ul>
+                    <p><strong>Description:</strong> The benchmark release of Linux Megamix. It offers the traditional,
+                        rock-solid Debian stability paired with the beautiful and highly customizable KDE Plasma
+                        desktop. It ships with a curated selection of standard, essential software (web browsers, office
+                        suites, media players) delivering a clean, frustration-free graphical experience for daily
+                        usage.</p>
+
+                    <h3>2. Core Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> None (CLI Only)</li>
+                        <li><strong>Target Audience:</strong> System Administrators, Server Environments, DIY
+                            Enthusiasts.</li>
+                    </ul>
+                    <p><strong>Description:</strong> An ultra-minimalist, headless foundation. This edition ships
+                        exclusively as a Command Line Interface (CLI) environment without a display manager. It is
+                        heavily optimized for zero-overhead, making it ideal for running backend servers, Docker
+                        deployments, Raspberry Pi clusters, or acting as a blank canvas for Linux power users to build
+                        their own bespoke OS layer by layer.</p>
+
+                    <h3>3. Ultra Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable (Integrated with Rhino Linux packaging concepts)</li>
+                        <li><strong>Desktop Environment:</strong> KDE Plasma</li>
+                        <li><strong>Target Audience:</strong> Power Users, Multidisciplinary Professionals.</li>
+                    </ul>
+                    <p><strong>Description:</strong> The absolute powerhouse of the Megamix family. Designed for users
+                        who "want it all." It comes bloated (in a good way) with an immense selection of premium
+                        applications covering development, gaming, and multimedia. To facilitate maximum software
+                        availability, it uniquely ships with multiple advanced package managers pre-installed and
+                        activated: <strong>Flatpak</strong>, <strong>Pacstall</strong> (the AUR equivalent for
+                        Ubuntu/Debian), and <strong>Debian Extrepo</strong>.</p>
+
+                    <h3>4. Developer Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> KDE Plasma</li>
+                        <li><strong>Target Audience:</strong> Software Engineers, Web Developers, Programmers.</li>
+                    </ul>
+                    <p><strong>Description:</strong> Tailored specifically to save developers hours of setup time. This
+                        edition comes pre-loaded with an arsenal of modern IDEs, compilers, and containerization
+                        engines. Out of the box, it includes <em>Antigravity IDE</em>, <em>Windsurf IDE</em>, <em>Cursor
+                            IDE</em>, <em>VS Code</em>, <em>Docker</em>, runtimes like <em>Rust</em>, and robust
+                        <code>git</code> implementations. Simply install and start writing code.
+                    </p>
+
+                    <h3>5. Multimedia Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> GNOME</li>
+                        <li><strong>Target Audience:</strong> Audio Producers, Video Editors, Graphic Designers.</li>
+                    </ul>
+                    <p><strong>Description:</strong> A studio-grade workstation system. It replaces generic kernels and
+                        schedulers with aggressive, low-latency system-tuning to decrease interactive reaction times
+                        (crucial for audio syncing). It comes pre-installed with powerful open-source Digital Audio
+                        Workstations (DAWs), non-linear video editors (NLEs), and vector/raster graphics suites.</p>
+
+                    <h3>6. Education Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> GNOME</li>
+                        <li><strong>Target Audience:</strong> Students, Teachers, Schools, and Academia.</li>
+                    </ul>
+                    <p><strong>Description:</strong> Built to foster learning environments. Featuring the
+                        distraction-free GNOME desktop interface, it comes loaded with an extensive suite of educational
+                        toolkits spanning mathematics, astronomy, typing tutors, language arts, and basic visual
+                        programming abstractions meant for classrooms.</p>
+
+                    <h3>7. Gaming Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> KDE Plasma</li>
+                        <li><strong>Target Audience:</strong> PC Gamers.</li>
+                    </ul>
+                    <p><strong>Description:</strong> An optimized environment ready to run modern Windows and Linux
+                        titles immediately. It simplifies gaming on Linux by pre-loading robust open-source graphics
+                        drivers (Mesa frameworks), translation layers like <strong>Proton/Wine</strong>, and massive
+                        gaming clients including <em>Steam</em> and <em>Lutris</em>. Dedicated NVIDIA proprietary
+                        drivers are readily available for one-click deployment through the integrated
+                        <strong>Megamix-Panel</strong> utility. Includes background performance tuning utilities to
+                        squeeze maximum FPS from the hardware.
+                    </p>
+
+                    <h3>8. Hardened Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> GNOME</li>
+                        <li><strong>Target Audience:</strong> Security Researchers, Privacy Advocates, Enterprise
+                            Deployments.</li>
+                    </ul>
+                    <p><strong>Description:</strong> Rather than aggressive lockdown, this edition is specifically
+                        designed to strike a perfect balance between deep system hardening and daily operational
+                        usability. It intelligently shrinks the attack surface without destroying system functionality
+                        through carefully restricted <code>sudoers</code> rights, disabling dangerous kernel modules,
+                        and robust <code>systemd</code> isolation. It features Mullvad Browser natively out of the box.
+                    </p>
+
+                    <h3>9. Lite Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> LXQt</li>
+                        <li><strong>Target Audience:</strong> Older Hardware, Resource-Constrained Environments.</li>
+                    </ul>
+                    <p><strong>Description:</strong> Purpose-built to breathe new life into aging laptops and ancient
+                        desktops. By utilizing the incredibly lightweight LXQt environment, it utilizes drastically less
+                        RAM and CPU power than standard editions, extending battery life and system responsiveness while
+                        maintaining full Debian functionality.</p>
+
+                    <h3>10. Rolling Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Sid / Trixie (Hybrid)</li>
+                        <li><strong>Desktop Environment:</strong> KDE Plasma</li>
+                        <li><strong>Target Audience:</strong> Linux Enthusiasts, Bleeding-Edge Software Chasers.</li>
+                    </ul>
+                    <p><strong>Description:</strong> For users who cannot wait for standard Debian release cycles. The
+                        Rolling edition completely abandons the static stable branch in favor of the rapidly updating
+                        <code>Unstable/Sid</code> repositories. It provides immediate access to the absolute newest
+                        kernel features and desktop environment updates, but it is highly experimental and can be
+                        unstable.
+                    </p>
+
+                    <h3>11. Scientific Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable</li>
+                        <li><strong>Desktop Environment:</strong> GNOME</li>
+                        <li><strong>Target Audience:</strong> Researchers, Data Scientists, Engineers.</li>
+                    </ul>
+                    <p><strong>Description:</strong> A dedicated workstation bundled with deeply complex software
+                        ecosystems necessary for laboratory research. Expect tools designed for heavy data analysis,
+                        algorithmic mathematics, biological modeling, and statistical mapping natively integrated.</p>
+
+                    <h3>12. Rescue-Live Edition</h3>
+                    <ul>
+                        <li><strong>Base:</strong> Debian Stable (Live USB Environment)</li>
+                        <li><strong>Desktop Environment:</strong> XFCE4</li>
+                        <li><strong>Target Audience:</strong> IT Professionals, Technicians.</li>
+                    </ul>
+                    <p><strong>Description:</strong> Not meant to be permanently installed onto a hard drive. This is a
+                        portable "Swiss Army Knife" designed to boot entirely from a USB stick into system RAM. It is
+                        packed with deep forensic diagnostic tools, <code>chroot</code> repair scripts, partition
+                        managers, bootloader recovery systems, and file-rescue software to recover completely broken or
+                        infected operating systems.</p>
+                </section>
+
+                <section id="which-edition" class="doc-section">
+                    <h2>Which Edition is for You?</h2>
+                    <p>Choosing the right Megamix edition depends entirely on your primary workflow, hardware
+                        capability, and technical experience level. Follow this guidance to make the optimal selection:
+                    </p>
+
+                    <h3>For the Average Desktop User</h3>
+                    <ul>
+                        <li><strong>Classic Edition:</strong> The logical choice for regular home or office use. It
+                            provides stability with essential applications on a pristine KDE Plasma desktop, devoid of
+                            niche workflows.</li>
+                    </ul>
+
+                    <h3>For Gamers & Creatives</h3>
+                    <ul>
+                        <li><strong>Gaming Edition:</strong> If your primary focus is launching Steam or executing
+                            Windows titles via Proton without having to manually script hardware optimizations, this
+                            environment provides the ideal foundation. NVIDIA driver deployment and system tuning are
+                            seamlessly handled via the integrated Megamix-Panel.</li>
+                        <li><strong>Multimedia Edition:</strong> Perfect for professionals working with audio or video
+                            editing. The low-latency kernel is indispensable for preventing desync in recording studios.
+                        </li>
+                    </ul>
+
+                    <h3>For Technology Professionals & Developers</h3>
+                    <ul>
+                        <li><strong>Developer Edition:</strong> Geared strictly toward programmers. With Docker, major
+                            IDEs, and runtimes pre-loaded natively, you bypass hours of technical pipeline setup.</li>
+                        <li><strong>Core Edition:</strong> If you are deploying an SSH server or just want a blank
+                            terminal to construct your own environment brick-by-brick, this provides the raw foundation.
+                        </li>
+                    </ul>
+
+                    <h3>For Academics & Laboratories</h3>
+                    <ul>
+                        <li><strong>Education Edition:</strong> Designed for classroom integration, featuring a
+                            distraction-free GNOME layout alongside critical open-source learning systems.</li>
+                        <li><strong>Scientific Edition:</strong> If you are drafting academic papers involving massive
+                            data algorithms or statistical modeling, the tooling matrix here is unparalleled
+                            out-of-the-box.</li>
+                    </ul>
+
+                    <h3>For Security & Forensics</h3>
+                    <ul>
+                        <li><strong>Hardened Edition:</strong> Mandatory if strict privacy, networking tracking
+                            blocking, and deep kernel-level sandboxing are your absolute operational priorities.</li>
+                        <li><strong>Rescue-Live Edition:</strong> A utility that should remain permanently on a bootable
+                            USB. The ultimate toolkit for penetrating corrupted bootloaders or salvaging data from dying
+                            drives.</li>
+                    </ul>
+
+                    <h3>Hardware & Experimental Constraints</h3>
+                    <ul>
+                        <li><strong>Lite Edition:</strong> Older hardware natively struggles under heavy graphical load.
+                            Flash this to instantly restore the velocity of machines older than 10 years using LXQt
+                            architecture.</li>
+                        <li><strong>Ultra Edition / Rolling Edition:</strong> These branches represent the extreme ends
+                            of software volume and theoretical modernity. Only recommended for powerful hardware and
+                            administrators capable of resolving package management conflicts.</li>
+                    </ul>
+                </section>
+
+                <section id="iso-to-usb" class="doc-section">
+                    <h2>Verifying & Flashing the ISO</h2>
+
+                    <h3>1. SHA256 Checksum Validation</h3>
+                    <p>Before writing the downloaded <code>.iso</code> to a USB drive, verifying the file integrity is
+                        mandatory to guarantee it has not been corrupted during download or tampered with.
+                        Cross-reference the <code>SHA256 CHECKSUM</code> string provided on the Download page against
+                        your local file.</p>
+                    <ul>
+                        <li style="margin-bottom: 12px;"><strong>On Linux:</strong> Open a terminal and execute:<br>
+                            <pre
+                                style="margin-top: 5px; margin-bottom: 5px;"><code>sha256sum /path/to/megamix-edition.iso</code></pre>
+                        </li>
+                        <li><strong>On Windows:</strong> Open Command Prompt (CMD) or PowerShell and execute:<br>
+                            <pre
+                                style="margin-top: 5px; margin-bottom: 5px;"><code>CertUtil -hashfile "C:\path\to\megamix-edition.iso" SHA256</code></pre>
+                        </li>
+                    </ul>
+                    <p>Compare the output matrix to the official signature. Only proceed to flashing if the hashes match
+                        perfectly.</p>
+
+                    <h3>2. Flashing via Ventoy (Recommended Method)</h3>
+                    <p>The Megamix infrastructure officially recommends <strong>Ventoy</strong> for deploying ISO
+                        images. This architecture circumvents destructive sector-level writes and allows for
+                        non-destructive multi-boot capabilities on a single physical drive.</p>
+                    <ol style="margin-left: 20px; line-height: 1.6; margin-bottom: 15px; color: var(--text-muted);">
+                        <li>Acquire the latest Ventoy release binary from the upstream repository.</li>
+                        <li>Initialize your target USB drive utilizing the Ventoy installer. This algorithm structures a
+                            hidden EFI boot sector and exposes an empty exFAT partition.</li>
+                        <li>Navigate to the formatted USB drive. Simply copy and paste the verified
+                            <code>Megamix.iso</code> file directly into the exposed exFAT filesystem tier. No extraction
+                            is required.
+                        </li>
+                        <li>Trigger a system reboot, interrupt the boot sequence to select the external USB module, and
+                            initialize the Megamix ISO natively from the Ventoy selection menu.</li>
+                    </ol>
+
+                    <h3>3. Traditional Sector Flashing Alternatives</h3>
+                    <p>If standard block-level flashing is required due to hardware legacy structures, proper
+                        configurations must be injected to preserve hybrid EFI structures:</p>
+                    <ul>
+                        <li><strong>Windows Frameworks:</strong> Utilize <em>Rufus</em>. It is critical to select
+                            <strong>DD Image Mode</strong> when prompted by the application, rather than standard ISO
+                            mode, to retain the Debian bootloader integrity.
+                        </li>
+                        <li><strong>Linux Frameworks:</strong> Utilize the raw <code>dd</code> binary protocol. For
+                            example: <br>
+                            <pre
+                                style="margin-top: 5px; margin-bottom: 5px;"><code>sudo dd if=megamix.iso of=/dev/sdX bs=4M status=progress</code></pre>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="usb-to-boot" class="doc-section">
+                    <h2>USB to Boot</h2>
+                    <p>Access the host machine's BIOS/UEFI settings and prioritize external mass storage mechanisms. If
+                        signature validation halts the initial boot sequence, it is recommended to temporarily disable
+                        Secure Boot modes.</p>
+                </section>
+
+                <section id="disk-installation" class="doc-section">
+                    <h2>Disk Installation</h2>
+                    <p>Megamix ISOs rely on the robust <strong>Debian Installer</strong> architecture rather than
+                        desktop live-calamares installers. Upon booting the flashed USB, wait at the GRUB menu. You must
+                        specifically select the <strong>Install</strong> or <strong>Graphical Install</strong> option
+                        from the bootloader to begin the partitioning and dependency fetching processes securely.</p>
+                </section>
+
+                <section id="keyboard-guide" class="doc-section">
+                    <h2>Megamix Keyboard Selector (Rescue-Live)</h2>
+                    <p>When operating under the Megamix Rescue-Live Edition, users are presented with a default volatile
+                        layout that may not match their physical hardware typing layout. The
+                        <code>megamix-keyboard</code> script offers an instant CLI resolution mechanism.
+                    </p>
+
+                    <h3>Argument Mode (Instant Switch)</h3>
+                    <p>For rapid layout switching, inject the standard two-letter country code directly into the
+                        terminal:</p>
+                    <pre><code>megamix-keyboard tr</code></pre>
+                    <p>Valid parameters include <code>us</code>, <code>ru</code>, <code>de</code>, <code>fr</code>, etc.
+                    </p>
+
+                    <h3>Interactive Interface Mode</h3>
+                    <p>Executing the command purely on its own summons a numerical distribution menu containing the top
+                        20 global layouts:</p>
+                    <pre><code>megamix-keyboard</code></pre>
+                    <p>Upon inputting the correct integer format, the script rapidly applies <code>setxkbmap</code>
+                        volatile rules binding the X11 GUI configurations instantly, alleviating terminal frustrations.
+                    </p>
+                </section>
+
+                <section id="megamix-panel" class="doc-section">
+                    <h2>Megamix-Panel Configuration Hub</h2>
+                    <p>The <code>megamix-panel</code> is a powerful CLI utility engineered to assist the management of
+                        complex administration tasks through a stylized, color-coded numerical overlay. It bridges
+                        repository, hardware, and file-system commands.</p>
+                    <pre><code>megamix-panel</code></pre>
+                    <p>This central operational authority provides the following structural capabilities:</p>
+                    <ul>
+                        <li><strong>System Updating:</strong> Conducts intelligent APT cleanups, safely handling Flatpak
+                            and native deb payloads while purging orphan cache files.</li>
+                        <li><strong>Service Management:</strong> Bypasses rigid standard systemd syntax for managing
+                            hardware background daemon restarts natively.</li>
+                        <li><strong>Telemetry & Diagnostics:</strong> Consolidates log sources (dmesg, journalctl),
+                            monitors active kernel thresholds natively via `fastfetch`, and evaluates network I/O
+                            interface blocks seamlessly.</li>
+                        <li><strong>Resolver Engineering (DNS):</strong> Integrates robust chattr locking structures
+                            over <code>/etc/resolv.conf</code> to enforce trusted external Nameservers against rogue
+                            DHCP modifications.</li>
+                        <li><strong>ZRAM Configurations:</strong> Allocates temporary CPU-compressed stages replacing
+                            harddisk partitions natively to enhance structural memory capabilities.</li>
+                    </ul>
+                </section>
+
+                <section id="nvidia-driver" class="doc-section">
+                    <h2>Nvidia Driver Installation</h2>
+                    <p>The Megamix-Panel integrates hardware analytical routines natively. Within the panel selection,
+                        trigger the `Install NVIDIA Drivers` parameter (Option 2). The system will safely authenticate
+                        the active PCI hardware matrices identifying Nvidia graphics architecture before executing a
+                        seamless deployment of proper closed-source driver kernels. Note that live media executions
+                        explicitly reject this operation to preserve non-volatile boundaries.</p>
+                </section>
+
+                <section id="faq" class="doc-section">
+                    <h2>Frequently Asked Questions (FAQ)</h2>
+
+                    <p><strong>Can I upgrade from one edition (e.g., Core) to another (e.g., Ultra) by just installing
+                            packages?</strong></p>
+                    <p>While Linux allows downloading any software package via <code>apt</code>, modifying fundamental
+                        capabilities across editions is highly discouraged. Each edition modifies low-level background
+                        mechanisms (like the kernel scheduler in Multimedia, or iptables routing in Hardened). It is
+                        always recommended to install the intended target ISO to ensure system stability.</p>
+                    <br>
+
+                    <p><strong>What is the difference between Stable Base and Rolling Base?</strong></p>
+                    <p>Eleven out of twelve Megamix editions are based on the impenetrable "Debian Stable" branch. This
+                        provides an unchanging, highly tested environment. The <em>Rolling Edition</em>, however, is
+                        tethered to "Debian Sid (Unstable)." Packages update almost daily, offering the newest software
+                        features, but occasionally causing breakage.</p>
+                    <br>
+
+                    <p><strong>Do I need an internet connection during installation?</strong></p>
+                    <p>Yes. The Debian Installer explicitly requires a stable network connection to successfully fetch
+                        external mirror structures, patch security updates, and satisfy proper dependency resolutions
+                        during the unpacking phase. Offline installation attempts will fail to download needed binaries.
+                    </p>
+                    <br>
+
+                    <p><strong>Why does Rescue-Live use XFCE4 instead of KDE Plasma like the Ultra edition?</strong></p>
+                    <p>Since the Rescue-Live edition operates 100% inside your volatile system RAM rather than a
+                        physical hard drive, minimizing overhead is critical. XFCE4 requires exceptionally low
+                        resources, allowing it to boot into almost any damaged computer regardless of age to execute
+                        disk recovery tools efficiently.</p>
+                </section>
+
+                <section id="technical-details" class="doc-section">
+                    <h2>Technical Details: Megamix Build Automation</h2>
+                    <p>The monumental task of maintaining and constructing the entire ecosystem is orchestrated by a
+                        specialized, in-house framework known as "Megamix Build Automation". This advanced Bash-based
+                        utility acts as the primary conductor for the Debian <code>live-build</code> infrastructure,
+                        ensuring absolute consistency across all 12 editions simultaneously.</p>
+                </section>
+            </div>
+        </div>
+
+        <footer class="footer mega-glass-panel" style="display: flex; flex-direction: column; align-items: center; padding: 40px; margin-top: 80px; border-bottom: none; border-left: none; border-right: none; border-radius: 0;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                <img src="Assets/megamix.png" alt="Megamix Logo" style="height: 60px; width: auto; filter: drop-shadow(0 0 15px rgba(102, 252, 241, 0.4));">
+            </div>
+            <div style="display: flex; gap: 30px; margin-bottom: 25px;">
+                <a href="https://github.com/Nixovena" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 8px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://x.com/nixovena" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 8px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X
+                </a>
+                <a href="https://nixovena.org" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 6px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                    Nixovena
+                </a>
+            </div>
+            <div style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">
+                Developed by <a href="https://nixovena.org" target="_blank" style="color: inherit; text-decoration: underline;">Nixovena Labs</a>.
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

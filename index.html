@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Megamix - Nixovena Labs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;900&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="Assets/megamix.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="brand">
+            <span class="mega-text">MEGA</span>MIX
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Overview</a></li>
+            <li><a href="releases.html">Releases</a></li>
+            <li><a href="docs.html">Docs</a></li>
+            <li><a href="download.html">Download</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-image">
+                <img src="Assets/megamix2.png" alt="Megamix Mascot">
+            </div>
+            <div class="hero-content">
+                <div class="badge">The Ultimate Collection</div>
+                <h1 class="page-title">
+                    12 Specialized Editions for <br>
+                    <span class="gradient-text">12 Unique Workflows</span>
+                </h1>
+                <p class="subtitle">
+                    Megamix is a monumental Linux distribution designed to cater to every conceivable use case. From
+                    hardcore gaming and scientific research to multimedia production and education. Choose your perfect
+                    environment.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#editions" class="btn btn-primary">Discover the Editions</a>
+                    <a href="docs.html" class="btn btn-secondary">Documentation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" style="margin: 80px 0; text-align: center; padding: 0 20px;">
+            <h2 class="section-title" style="margin-bottom: 30px; font-size: 2.5rem;">Architecture & Philosophy</h2>
+            <p
+                style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; max-width: 1000px; margin: 0 auto;">
+                Linux Megamix is an advanced, strictly Debian-based operating system ecosystem engineered to eliminate
+                the compromise of a "one-size-fits-all" desktop. It effectively fragments into 12 dedicated, highly
+                targeted architectures designed to suit 12 distinct operational purposes ranging from high-performance
+                gaming and elite software development to deep system hardening and forensic recovery. Each specific
+                version natively bundles customized low-level kernel settings, optimized package matrices, and the ideal
+                desktop environment explicitly tailored out-of-the-box to accelerate its intended workflow.
+            </p>
+            <br>
+            <p
+                style="color: var(--text-muted); font-size: 1.15rem; line-height: 1.8; max-width: 1000px; margin: 0 auto;">
+                Available structural foundations include the Classic, Core, Lite, Multimedia, Scientific, Education,
+                Hardened, Gaming, Rolling, Developer, Ultra, and Rescue variants. Built for absolute stability and
+                transparency, the distribution enforces installation via the robust <strong>Debian Installer</strong>
+                framework, while simultaneously granting users the flexibility of utilizing a comprehensive volatile
+                <strong>Live Mode</strong> mechanism for hardware testing and rapid environmental diagnostics prior to
+                installation.
+            </p>
+        </section>
+
+        <!-- The 12 Editions Showcase -->
+        <section class="editions-section" id="editions">
+            <h2 class="section-title">Explore the Megamix Ecosystem</h2>
+            <div class="editions-grid" id="editions-container">
+
+                <div class="edition-card">
+                    <img src="Assets/classic.png" alt="Classic Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Classic Edition</div>
+                        <p class="edition-desc">Traditional paradigms and legacy desktop layouts for a familiar,
+                            nostalgic computing experience.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/dev.png" alt="Developer Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Developer Edition</div>
+                        <p class="edition-desc">Pre-configured with IDEs, compilers, and containerization engines for
+                            software engineers.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/lite.png" alt="Lite Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Lite Edition</div>
+                        <p class="edition-desc">Minimal resource footprint designed for reviving aging hardware without
+                            sacrificing modernity.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/hardened.png" alt="Hardened Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Hardened Edition</div>
+                        <p class="edition-desc">Strikes a perfect balance between deep system hardening and daily
+                            usability. Pre-configured with essential security and privacy software.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/gaming.png" alt="Gaming Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Gaming Edition</div>
+                        <p class="edition-desc">Injected with low-latency kernel optimizations, pre-installed
+                            Proton/Steam integrations, and aggressive system performance tuning.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/multi.png" alt="Multimedia Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Multimedia Edition</div>
+                        <p class="edition-desc">Low-latency kernel optimizations and professional studio software
+                            out-of-the-box for audio,
+                            video, and graphic production.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/ultra.png" alt="Ultra Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Ultra Edition</div>
+                        <p class="edition-desc">The ultimate powerhouse offering an immense selection of premium
+                            software. Features a multi-layered package management stack including Flatpak, Pacstall, and
+                            Extrepo.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/rolling.png" alt="Rolling Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Rolling Edition</div>
+                        <p class="edition-desc">Bleeding-edge repository configurations for users demanding the absolute
+                            latest packages.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/edu.png" alt="Education Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Education Edition</div>
+                        <p class="edition-desc">Packed with learning tools, academic software, and restrictive
+                            safeguards for classroom environments.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/sc.png" alt="Scientific Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Scientific Edition</div>
+                        <p class="edition-desc">Includes extensive mathematical computing, data analysis tools, and
+                            laboratory ecosystems.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/rescue.png" alt="Rescue-Live Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Rescue-Live Edition</div>
+                        <p class="edition-desc">Runs entirely in RAM. Equipped with advanced forensics, disk recovery,
+                            and partitioning tools.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+                <div class="edition-card">
+                    <img src="Assets/core.png" alt="Core Edition" class="edition-image">
+                    <div class="edition-content">
+                        <div class="edition-name">Core Edition</div>
+                        <p class="edition-desc">The standard, unbloated foundation providing a reliable and robust daily
+                            driver environment.</p>
+                        <a href="download.html" class="edition-link">Download</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Megamix Panel Feature (Moved below editions) -->
+        <section class="panel-section mega-glass-panel">
+            <div class="panel-content">
+                <h2 class="panel-title gradient-text">Megamix-Panel</h2>
+                <h3 class="panel-subtitle">Simplifying Deep System Administration</h3>
+                <p>Complex Linux administration shouldn't require memorizing advanced shell commands. The <strong>Megamix-Panel</strong> is a powerful, highly-automated command-line utility built directly into the core to strictly enforce this philosophy.</p>
+                <p>Through a simple color-coded, numbered menu, users can execute complete system OS upgrades, natively install NVIDIA closed-source drivers, explicitly flush backend cache pipelines, switch specific DE setups, safely manage systemd daemon states, and seamlessly toggle ZRAM allocations—all handled flawlessly in a few keystrokes.</p>
+            </div>
+            <div class="panel-image-container">
+                <img src="Assets/megamix-panel.png" alt="Megamix Panel Interface" class="panel-image glow-image float-anim">
+            </div>
+        </section>
+
+        <!-- Teaser Video Section -->
+        <section class="teaser-section">
+            <div class="teaser-container">
+                <video autoplay muted loop playsinline class="teaser-video">
+                    <source src="Assets/teaser.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="teaser-overlay">
+                    <h2 class="teaser-slogan">CHOOSE YOUR PERFECT EDITION</h2>
+                    <p class="teaser-text">12 Specialized Versions for Every Workflow and Hardware.</p>
+                    <a href="download.html" class="btn btn-primary">Go to Download Page</a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer mega-glass-panel" style="display: flex; flex-direction: column; align-items: center; padding: 40px; margin-top: 80px; border-bottom: none; border-left: none; border-right: none; border-radius: 0;">
+            <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 25px;">
+                <img src="Assets/megamix.png" alt="Megamix Logo" style="height: 60px; width: auto; filter: drop-shadow(0 0 15px rgba(102, 252, 241, 0.4));">
+            </div>
+            <div style="display: flex; gap: 30px; margin-bottom: 25px;">
+                <a href="https://github.com/Nixovena" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 8px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    GitHub
+                </a>
+                <a href="https://x.com/nixovena" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 8px;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X
+                </a>
+                <a href="https://nixovena.org" target="_blank" style="color: var(--text-muted); text-decoration: none; font-size: 1rem; transition: color 0.3s; display: flex; align-items: center; gap: 6px;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/><line x1="2" y1="12" x2="22" y2="12"/></svg>
+                    Nixovena
+                </a>
+            </div>
+            <div style="color: var(--text-muted); font-size: 0.95rem; font-weight: 500;">
+                Developed by <a href="https://nixovena.org" target="_blank" style="color: inherit; text-decoration: underline;">Nixovena Labs</a>.
+            </div>
+        </footer>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("imageModal");
+        var modalImg = document.getElementById("img01");
+
+        // Select all images inside edition cards and the panel image
+        var images = document.querySelectorAll('.edition-image, .panel-section img');
+
+        images.forEach(img => {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        });
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close when clicking outside the image
+        modal.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
